@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=256px" />
+        
+        <title>[ f0x ] [ ledspace ]</title>
+        
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <center>
+            [ f0x ]<br><br>
+            <span class="links">
+                <a href="https://f.0x52.eu">home</a>
+                <a href="/dotfiles/">dotfiles</a>
+                <a href="/"></a>
+                <a href="/projects/">projects</a>
+            </span>
+            <br><br><br>
+            <p>To color up my local hackerspace, I proposed to make 13 RGB tube lights. After getting a budget and waiting for Aliexpress, the fun could begin.</p>
+
+<p>As a base I’m using Hornbach’s <a href="https://www.hornbach.nl/shop/LED-Armatuur-20-Watt-1200-mm-koel-wit-Energieklasse-A/5825358/artikel.html"> White LED Tube Light</a>, which offer a beautiful diffuser with aluminium heatsink.<br />
+We start by tearing it down, which is surprisingly easy:<br />
+<img src="/media/ledspace/teardown.png" /><br />
+After removing the white led pcb, it’s time to glue 1.2 meters of APA102 strip in it’s place.<br />
+<img src="/media/ledspace/strip.png" /><br />
+For connecting the tubes, I’m using RJ45 connectors. the TX pair (orange) for data, and the Power pair (brown) for clock. They are both twisted with a ground.<br />
+<img src="/media/ledspace/strip solder update.png" /><br />
+The RJ45 connector fits snuggly inside the casing<br />
+<img src="/media/ledspace/wires.png" /><br />
+The PSU consists of 2 USB plugs, and an IKEA KOPLA power supply<br />
+<img src="/media/ledspace/psu.png" /><br />
+On the other side of the tube is another RJ45, which transfers ground, clock and data to the next tube<br />
+With two connected togeather, it already looks great!<br />
+<img src="/media/ledspace/final.png" /><br />
+Here I installed the first two, driven by an Arduino Nano. Later on, a Raspberry Pi Zero W will take it’s place.<br />
+<img src="/media/ledspace/final2.png" /></p>
+
+
+        </center>
+    </body>
+</html>
+

@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/f0x52
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://f.0x52.eu
+  * I am f0x52 (https://keybase.io/f0x52) on keybase.
+  * I have a public key ASDI3-i5VnUdrTfTH2IRdrH7NmRQ6hk_NsL4ocqTJskslAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010127aef9308d2eef32fc160ed7cbd9821fbf05154f258053ad24e3705b275699010a",
+      "host": "keybase.io",
+      "kid": "0120c8dfe8b956751dad37d31f621176b1fb366450ea193f36c2f8a1ca9326c92c940a",
+      "uid": "4e996ed94f05a36e9404af48f985b319",
+      "username": "f0x52"
+    },
+    "merkle_root": {
+      "ctime": 1518620769,
+      "hash": "3ed10c9da216c41ca00f5ae0c6326770ff6d554bd32a164c29089befabb0b0e32507d89e908c0c65563b19f4b3131e41eb69e67c5c3a3291c2cfc8e235e93158",
+      "hash_meta": "341435c41f67fe0ef024e308df724e7e166dfd113342863a973df3494aba465f",
+      "seqno": 2081915
+    },
+    "service": {
+      "hostname": "f.0x52.eu",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.41"
+  },
+  "ctime": 1518620783,
+  "expire_in": 504576000,
+  "prev": "50ea96f24670a4a24bee4001183bd2561f6d972483428a8290481faefbb9f916",
+  "seqno": 12,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgyN/ouVZ1Ha030x9iEXax+zZkUOoZPzbC+KHKkybJLJQKp3BheWxvYWTFAz97ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxMjdhZWY5MzA4ZDJlZWYzMmZjMTYwZWQ3Y2JkOTgyMWZiZjA1MTU0ZjI1ODA1M2FkMjRlMzcwNWIyNzU2OTkwMTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYzhkZmU4Yjk1Njc1MWRhZDM3ZDMxZjYyMTE3NmIxZmIzNjY0NTBlYTE5M2YzNmMyZjhhMWNhOTMyNmM5MmM5NDBhIiwidWlkIjoiNGU5OTZlZDk0ZjA1YTM2ZTk0MDRhZjQ4Zjk4NWIzMTkiLCJ1c2VybmFtZSI6ImYweDUyIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE4NjIwNzY5LCJoYXNoIjoiM2VkMTBjOWRhMjE2YzQxY2EwMGY1YWUwYzYzMjY3NzBmZjZkNTU0YmQzMmExNjRjMjkwODliZWZhYmIwYjBlMzI1MDdkODllOTA4YzBjNjU1NjNiMTlmNGIzMTMxZTQxZWI2OWU2N2M1YzNhMzI5MWMyY2ZjOGUyMzVlOTMxNTgiLCJoYXNoX21ldGEiOiIzNDE0MzVjNDFmNjdmZTBlZjAyNGUzMDhkZjcyNGU3ZTE2NmRmZDExMzM0Mjg2M2E5NzNkZjM0OTRhYmE0NjVmIiwic2Vxbm8iOjIwODE5MTV9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiZi4weDUyLmV1IiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuNDEifSwiY3RpbWUiOjE1MTg2MjA3ODMsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiNTBlYTk2ZjI0NjcwYTRhMjRiZWU0MDAxMTgzYmQyNTYxZjZkOTcyNDgzNDI4YTgyOTA0ODFmYWVmYmI5ZjkxNiIsInNlcW5vIjoxMiwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDsJ2ZuVzDrYnBQekwuOD2YqaUNRBEQVaNd+//haS+cTKu9P+wieqjVj2uOSuJU+qkHt0WLCUGCIBY/E7jYt/4DqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgDjn+XfHFMhDMwGMGYacvHZTLgCQTJEbf8dKW7+3y5PWjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/f0x52
+
+==================================================================
