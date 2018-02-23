@@ -38,3 +38,14 @@ img {
 .double {
     width: 49%;
 }
+
+.highlighter-rouge {
+    text-align: left;
+    background-color: #181818;
+    margin: 0;
+    padding: 10px;
+}
+
+pre {
+    margin: 0;
+}
