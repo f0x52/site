@@ -35,9 +35,6 @@ Nginx config:</p>
     <span class="kn">ssl_dhparam</span> <span class="n">/etc/ssl/certs/dhparam.pem</span><span class="p">;</span>
     <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span><span class="p">;</span>
     <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
-    <span class="c1">#ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:ECDHE-RSA-AES128-GCM-SHA256:AES256+EECDH:DHE-RSA-AES128-GCM-SHA256:AES256+EDH:ECD
-</span><span class="kn">-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-C</span>
-<span class="s">DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"</span><span class="p">;</span>
     <span class="kn">ssl_ciphers</span> <span class="s">AES256+EECDH:AES256+EDH:!aNULL</span><span class="p">;</span>
     <span class="kn">ssl_ecdh_curve</span> <span class="s">secp384r1</span><span class="p">;</span> <span class="c1"># Requires nginx &gt;= 1.1.0
 </span>    <span class="kn">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
