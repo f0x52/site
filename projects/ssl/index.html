@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=256px" />
+        
+        <title>[ f0x ] [ ssl ]</title>
+        
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <center>
+            [ f0x ]<br><br>
+            <span class="links">
+                <a href="https://f.0x52.eu">home</a>
+                <a href="/dotfiles/">dotfiles</a>
+                <a href="/"></a>
+                <a href="/projects/">projects</a>
+            </span>
+            <br><br><br>
+            <p>Good SSL is important for <em>any</em> site. Over time I’ve combined bits of other configs, giving me this setup (which also happens to give a perfect https://ssllabs/ssltest score):</p>
+
+<p>First generate /etc/ssl/certs/dhparam.pem:<br />
+<code class="highlighter-rouge">sudo openssl dhparam -dsaparam -out /etc/ssl/certs/dhparam.pem 8192</code></p>
+
+<p>Nginx:</p>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
+    <span class="kn">listen</span> <span class="s">[::]:443</span> <span class="s">ssl</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">f.0x52.eu,</span> <span class="s">0x52.eu,</span> <span class="s">www.0x52.eu</span><span class="p">;</span>
+    <span class="kn">ssl_certificate</span> <span class="n">/etc/letsencrypt/live/f.0x52.eu/fullchain.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>    <span class="kn">ssl_certificate_key</span> <span class="n">/etc/letsencrypt/live/f.0x52.eu/privkey.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>
+    <span class="kn">ssl_dhparam</span> <span class="n">/etc/ssl/certs/dhparam.pem</span><span class="p">;</span>
+    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span><span class="p">;</span>
+    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+    <span class="c1">#ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:ECDHE-RSA-AES128-GCM-SHA256:AES256+EECDH:DHE-RSA-AES128-GCM-SHA256:AES256+EDH:ECD
+</span><span class="kn">-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-C</span>
+<span class="s">DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"</span><span class="p">;</span>
+    <span class="kn">ssl_ciphers</span> <span class="s">AES256+EECDH:AES256+EDH:!aNULL</span><span class="p">;</span>
+    <span class="kn">ssl_ecdh_curve</span> <span class="s">secp384r1</span><span class="p">;</span> <span class="c1"># Requires nginx &gt;= 1.1.0
+</span>    <span class="kn">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
+    <span class="kn">ssl_session_timeout</span> <span class="mi">10m</span><span class="p">;</span>
+
+    <span class="kn">ssl_session_tickets</span> <span class="no">off</span><span class="p">;</span> <span class="c1"># Requires nginx &gt;= 1.5.9
+</span>    <span class="kn">ssl_stapling</span> <span class="no">on</span><span class="p">;</span> <span class="c1"># Requires nginx &gt;= 1.3.7
+</span>    <span class="kn">ssl_stapling_verify</span> <span class="no">on</span><span class="p">;</span> <span class="c1"># Requires nginx =&gt; 1.3.7
+</span>    <span class="kn">resolver</span> <span class="mi">87</span><span class="s">.98.175.85</span> <span class="mi">5</span><span class="s">.9.49.12</span> <span class="mi">193</span><span class="s">.183.98.154</span> <span class="mi">5</span><span class="s">.135.183.146</span> <span class="s">valid=300s</span><span class="p">;</span>
+    <span class="kn">resolver_timeout</span> <span class="s">5s</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">Strict-Transport-Security</span> <span class="s">"max-age=63072000</span><span class="p">;</span> <span class="kn">includeSubDomains</span><span class="p">;</span> <span class="kn">preload"</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">X-Frame-Options</span> <span class="s">DENY</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">X-Content-Type-Options</span> <span class="s">nosniff</span><span class="p">;</span>
+    <span class="kn">gzip</span> <span class="no">off</span><span class="p">;</span>
+
+    <span class="kn">root</span> <span class="n">/var/www/f.0x52.eu</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">f.0x52.eu,</span> <span class="s">0x52.eu,</span> <span class="s">www.0x52.eu</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="n">/.well-known</span> <span class="p">{</span>
+        <span class="kn">root</span> <span class="n">/var/www/git.omnius.zone</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">if</span> <span class="s">(</span><span class="nv">$scheme</span> <span class="s">!=</span> <span class="s">"https")</span><span class="p">{</span>
+            <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kn">return</span> <span class="mi">404</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>You’ll need to comment out the 443 block before generating the first cert, otherwise nginx complains about the nonexistent cert files.<br />
+Get letsencrypt certs:
+<code class="highlighter-rouge">sudo certbot --authenticator webroot --installer nginx -d f.0x52.eu -d 0x52.eu -d www.0x52.eu --rsa-key-size 4096</code>
+Remove the 443 block comments, restart nginx and all should be great!</p>
+
+        </center>
+    </body>
+</html>
+
