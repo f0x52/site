@@ -23,8 +23,8 @@
 <p>First generate /etc/ssl/certs/dhparam.pem:</p>
 <pre><code class="language-linux">sudo openssl dhparam -dsaparam -out /etc/ssl/certs/dhparam.pem 8192
 </code></pre>
-
-<p>Nginx:</p>
+<p><br />
+Nginx config:</p>
 <div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
     <span class="kn">listen</span> <span class="s">[::]:443</span> <span class="s">ssl</span><span class="p">;</span>
@@ -70,12 +70,13 @@
         <span class="kn">return</span> <span class="mi">404</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div></div>
-
-<p>You’ll need to comment out the 443 block before generating the first cert, otherwise nginx complains about the nonexistent cert files.<br />
+<p><br />
+You’ll need to comment out the 443 block before generating the first cert, otherwise nginx complains about the nonexistent cert files.<br /><br />
 Get letsencrypt certs:</p>
 <pre><code class="language-linux">sudo certbot --authenticator webroot --installer nginx -d f.0x52.eu -d 0x52.eu -d www.0x52.eu --rsa-key-size 4096
 </code></pre>
-<p>Remove the 443 block comments, restart nginx and all should be great!</p>
+<p><br />
+Remove the 443 block comments, restart nginx and all should be great!</p>
 
         </center>
     </body>
