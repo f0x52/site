@@ -5,6 +5,11 @@ html {
     color: #aaa;
 }
 
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 p {
     margin: 0;
 }
@@ -29,23 +34,31 @@ a:hover {
     padding: 5px;
 }
 
-img {
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+video {
     width: 100%;
-    padding-top: 25px;
-    padding-bottom: 25px;
 }
 
-.double {
-    width: 49%;
+img {
+    padding: 0.3rem;
 }
 
-.highlighter-rouge {
+#img, #video {
+    margin: 0.3rem auto;
+    display: block;
+    width: 70vw;
+    padding: 1.3rem;
+}
+
+code {
     text-align: left;
     background-color: #181818;
-    margin: 0;
-    padding: 10px;
-}
-
-pre {
-    margin: 0;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    display: block;
 }
