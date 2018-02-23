@@ -21,8 +21,8 @@
             <p>Good SSL is important for <em>any</em> site. Over time I’ve combined bits of other configs, giving me this setup (which also happens to give a perfect https://ssllabs/ssltest score):</p>
 
 <p>First generate /etc/ssl/certs/dhparam.pem:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo openssl dhparam -dsaparam -out /etc/ssl/certs/dhparam.pem 8192
-</code></pre></div></div>
+<pre><code class="language-linux">sudo openssl dhparam -dsaparam -out /etc/ssl/certs/dhparam.pem 8192
+</code></pre>
 
 <p>Nginx:</p>
 <div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
@@ -73,8 +73,8 @@
 
 <p>You’ll need to comment out the 443 block before generating the first cert, otherwise nginx complains about the nonexistent cert files.<br />
 Get letsencrypt certs:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo certbot --authenticator webroot --installer nginx -d f.0x52.eu -d 0x52.eu -d www.0x52.eu --rsa-key-size 4096
-</code></pre></div></div>
+<pre><code class="language-linux">sudo certbot --authenticator webroot --installer nginx -d f.0x52.eu -d 0x52.eu -d www.0x52.eu --rsa-key-size 4096
+</code></pre>
 <p>Remove the 443 block comments, restart nginx and all should be great!</p>
 
         </center>
