@@ -43,14 +43,15 @@
       
       function geoip(ip) {
         console.log("fetching ip " + ip)
-        fetch("https://geoip.nekudo.com/api/" + ip )
+        fetch("http://ip-api.com/json/" + ip )
         .then((response) => response.json())
           .then((json) => {
-            var marker = L.marker([json.location.latitude, json.location.longitude]).addTo(map);
+            var marker = L.marker([json.lat, json.lon]).addTo(map);
             marker.bindPopup(
-              "ip: " + json.ip + "<br>" +
+              "ip: " + json.query + "<br>" +
               "city: " + json.city + "<br>" +
-              "time: " + json.location.time_zone
+              "country: " + json.country + "<br>" +
+              "time: " + json.time_zone
             );
         });
       }
