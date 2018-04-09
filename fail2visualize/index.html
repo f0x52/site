@@ -29,6 +29,8 @@
         .then(response => {
           if(response == undefined) {
             alert("can't access geoip api, sometimes adblockers block it")
+          } else {
+            return response
           }
         })
         .then(response => response.text())
