@@ -43,7 +43,7 @@
       
       function geoip(ip) {
         console.log("fetching ip " + ip)
-        fetch("http://ip-api.com/json/" + ip )
+        fetch("https://f.0x52.eu/json/" + ip )
         .then((response) => response.json())
           .then((json) => {
             var marker = L.marker([json.lat, json.lon]).addTo(map);
