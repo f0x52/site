@@ -27,13 +27,11 @@
     <script>
       fetch('https://f.0x52.eu/media/ips.txt')
         .then(response => {
-          if(!response.ok) {
-            alert("can't access geoip api, sometimes adblockers block it")
-          } else {
-            return response
+          if(response.ok) {
+            return response.text()
           }
+          alert("can't access geoip api, sometimes adblockers block it")
         })
-        .then(response => response.text())
         .then(text => {
           text.split("\n").forEach(function(ip) {
             console.log(ip);
