@@ -27,7 +27,7 @@
     <script>
       fetch('https://f.0x52.eu/media/ips.txt')
         .then(response => {
-          if(!response.ok) {
+          if(response == undefined) {
             alert("can't access geoip api, sometimes adblockers block it")
           }
         })
