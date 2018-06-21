@@ -58,10 +58,6 @@ server {
     listen 80;
     server_name f.0x52.eu, 0x52.eu, www.0x52.eu;
 
-    location /.well-known {
-        root /var/www/git.omnius.zone;
-    }
-
     location / {
         if ($scheme != "https"){
             return 301 https://$host$request_uri;
